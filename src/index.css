@@ -1,111 +1,330 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  transition: 0.2s;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
+.dark {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.navbar {
+  max-width: 1380px;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoSpan {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  img {
+    width: 38px;
+    border-radius: 7px;
+  }
+  .logo {
+    font-size: 26px;
+    color: #989898;
+    font-weight: 500;
+    cursor: pointer;
+
+    strong {
+      color: #2ea5ff;
+      text-shadow: 1px 1px 10px #4cb1ff;
+    }
+  }
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.navbar ul button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.navbar ul button:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+.navbar ul button:active {
+  transform: scale(0.95);
+}
+.navbar ul select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.navbar ul select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+.navbar ul select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+.dark .navbar ul {
+  background: #1e293b;
+}
+.dark .navbar ul button {
+  color: #cbd5f5;
+}
+.dark .navbar ul button:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+.dark .navbar ul select {
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+.dark .navbar ul select:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
+}
+.dark .navbar ul select option {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+.inputSpan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0f172a;
+  width: 600px;
+}
+.inputSpan button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #64748b;
+}
+.inputSpan:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  transform: scale(1.02);
+}
+.dark .inputSpan {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+.dark .searchInput {
+  color: #f1f5f9;
+}
+.dark .searchInput::placeholder {
+  color: #94a3b8;
+}
+.dark .inputSpan button {
+  color: #94a3b8;
+}
+.dark .inputSpan:focus-within {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
+}
+
+/* LOGIN COMPONENT SECTION */
+
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginCard {
+  width: 100%;
+  max-width: 380px;
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  gap: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
-
-h1,
-h2 {
-  font-family: var(--heading);
+.loginCard h2 {
+  text-align: center;
+}
+.inputSpan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+}
+.inputIcon {
+  font-size: 16px;
+  color: #64748b;
+}
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0f172a;
+}
+.searchInput::placeholder {
+  color: #94a3b8;
+}
+.eyeIcon {
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+.inputSpan:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+.inputSpan:hover {
+  border-color: #cbd5f5;
+}
+.loginBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #6366f1;
+  color: white;
   font-weight: 500;
-  color: var(--text-h);
+  cursor: pointer;
+  transition: 0.2s;
 }
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+.loginBtn:hover {
+  background: #4f46e5;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+.loginBtn:active {
+  transform: scale(0.97);
 }
-p {
-  margin: 0;
+.dark .loginCard {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.dark .inputSpan {
+  background: #0f172a;
+  border: 1px solid #334155;
 }
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.dark .inputIcon {
+  color: #94a3b8;
+}
+.dark .searchInput {
+  color: #e2e8f0;
+}
+.dark .searchInput::placeholder {
+  color: #64748b;
+}
+.dark .eyeIcon {
+  color: #94a3b8;
+}
+.dark .inputSpan:focus-within {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
+}
+.dark .loginBtn {
+  background: #818cf8;
+}
+.dark .loginBtn:hover {
+  background: #6366f1;
+}
+.loginCard .logoSpan {
+  margin: 0 auto;
+}
+.loginAddon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginToggleDark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.loginToggleDark:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+.loginToggleDark:active {
+  transform: scale(0.95);
+}
+.dark .loginToggleDark {
+  color: #cbd5f5;
+}
+.dark .loginToggleDark:hover {
+  background: #334155;
+  color: #f1f5f9;
+}
+.linkComponent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #475569;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.linkComponent:hover {
+  background: #e2e8f0;
+}
+.linkComponent:hover #leftIcon {
+  transform: translateX(-3px);
+}
+.dark .linkComponent {
+  color: #f1f5f9;
+}
+.dark .linkComponent:hover {
+  background: #334155;
 }
