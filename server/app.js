@@ -12,12 +12,16 @@ if (!DB_URI) {
 }
 
 const app = express();
-app.use(express.json());
 app.use(
   cors({
-    origin: "http:localhost:5173",
+    origin: "http://localhost:5173",
   }),
 );
+app.use(express.json());
+
+app.get("/login", (req, res) => {
+  res.json("Bla bla bla");
+});
 
 connectDB(DB_URI).then(() => {
   app.listen(2000, () => {

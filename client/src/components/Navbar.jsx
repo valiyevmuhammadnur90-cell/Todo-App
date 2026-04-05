@@ -25,6 +25,7 @@ function Navbar() {
 
   function changeLanguage(e) {
     i18n.changeLanguage(e.target.value);
+    localStorage.setItem("language", e.target.value);
   }
 
   return (
@@ -32,7 +33,7 @@ function Navbar() {
       <div className="navbar">
         <span className="logoSpan">
           <img src="/public/taskflow_icon.png" alt="" />
-          <h2 className="logo" onClick={() => navigate("/")}>
+          <h2 className="logo" onClick={() => window.location.reload()}>
             Task<strong>flow</strong>
           </h2>
         </span>

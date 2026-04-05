@@ -32,7 +32,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "uz",
+  lng: localStorage.getItem("language"),
   fallbackLng: "ru",
   interpolation: {
     escapeValue: false,

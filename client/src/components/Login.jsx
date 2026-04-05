@@ -9,12 +9,9 @@ import {
   SunFilled,
   MoonFilled,
 } from "@ant-design/icons";
-import { message } from "antd";
 import { ThemeContext } from "./context/ThemeContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useMutation } from "@tanstack/react-query";
-import { loginUser } from "./api/auth";
 
 function Login() {
   const { t } = useTranslation();
@@ -27,18 +24,6 @@ function Login() {
 
   const [show, setShow] = useState(false);
 
-  const mutation = useMutation({
-    mutationFn: loginUser,
-
-    onSuccess: (data) => {
-      console.log("Success: ", data);
-      localStorage.setItem("token", data.token);
-
-      message.success("Kirish muvaffaqqiyatli bajarildi!");
-      navigate("/");
-    },
-  });
-
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -48,11 +33,6 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    mutation.mutate({
-      email: form.email,
-      password: form.password,
-    });
   };
 
   function toggleDark() {
@@ -118,12 +98,8 @@ function Login() {
             {show ? <EyeOutlined /> : <EyeInvisibleOutlined />}
           </span>
         </div>
-        <button
-          type="submit"
-          className="loginBtn"
-          disabled={mutation.isPending}
-        >
-          {mutation.isPending ? `${t("loginIsPending")}` : `${t("login")}`}
+        <button type="submit" className="loginBtn">
+          {t("login")}
         </button>
       </form>
     </div>
