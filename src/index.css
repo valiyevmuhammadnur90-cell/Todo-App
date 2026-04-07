@@ -162,7 +162,7 @@
   box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
 }
 .tasks {
-  max-width: 1480px;
+  max-width: 1380px;
   width: 100%;
   margin: 20px auto;
   display: flex;
@@ -170,7 +170,7 @@
   align-items: center;
 }
 .home {
-  max-width: 1480px;
+  max-width: 1380px;
   width: 100%;
   margin: 0 auto;
   display: flex;
