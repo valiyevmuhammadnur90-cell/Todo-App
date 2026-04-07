@@ -38,22 +38,7 @@ function Navbar() {
           </h2>
         </span>
 
-        <span className="inputSpan">
-          <SearchOutlined />
-          <input
-            type="text"
-            className="searchInput"
-            placeholder={t("inputSearchPlaceholder")}
-          />
-          <button>
-            <ArrowRightOutlined />
-          </button>
-        </span>
-
         <ul>
-          <button onClick={() => navigate("/kirish")}>
-            {<LoginOutlined />}
-          </button>
           <button onClick={toggleDark}>
             {dark ? <SunFilled /> : <MoonFilled />}
           </button>

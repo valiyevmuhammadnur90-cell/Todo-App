@@ -1,10 +1,10 @@
+import { Descriptions } from "antd";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
   uz: {
     translation: {
-      welcome: "Xush kelibsiz!",
       inputSearchPlaceholder: "Izlash...",
       login: "Kirish",
       loginIsPending: "Kirilmoqda...",
@@ -13,11 +13,18 @@ const resources = {
       namePlaceholder: "Ism kiriting...",
       emailPlaceholder: "Elektron pochta kiriting...",
       passwordPlaceholder: "Parol kiriting...",
+      error: "Xato",
+      sure: "Rostdan ham o‘chirmoqchimisiz?",
+      notPossible: "Bu amalni qaytarib bo‘lmaydi!",
+      delete: "O'chirish",
+      edit: "Tahrirlash",
+      connecting: "Ulanmoqda...",
+      title: "Sarlavha",
+      description: "Izoh",
     },
   },
   ru: {
     translation: {
-      welcome: "Добро пожаловать!",
       inputSearchPlaceholder: "Поиск...",
       login: "Авторизоваться",
       loginIsPending: "Выполняется вход...",
@@ -26,6 +33,14 @@ const resources = {
       namePlaceholder: "Введите имя...",
       emailPlaceholder: "Введите адрес электронной почты...",
       passwordPlaceholder: "Введите пароль...",
+      error: "Ошибка",
+      sure: "Вы уверены, что хотите удалить это?",
+      notPossible: "Это действие необратимо!",
+      delete: "Удалить",
+      edit: "Редактировать",
+      connecting: "Подключение...",
+      title: "Заголовок",
+      description: "Описание",
     },
   },
 };

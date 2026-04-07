@@ -11,6 +11,9 @@
   color: #e5e7eb;
 }
 
+.app {
+  height: 100vh;
+}
 .navbar {
   max-width: 1380px;
   width: 100%;
@@ -158,173 +161,38 @@
   border-color: #818cf8;
   box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
 }
-
-/* LOGIN COMPONENT SECTION */
-
-.loginPage {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.loginCard {
+.tasks {
+  max-width: 1180px;
   width: 100%;
-  max-width: 380px;
-  padding: 28px;
-  border-radius: 16px;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-.loginCard h2 {
-  text-align: center;
-}
-.inputSpan {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  transition: all 0.25s ease;
-}
-.inputIcon {
-  font-size: 16px;
-  color: #64748b;
-}
-.searchInput {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 14px;
-  color: #0f172a;
-}
-.searchInput::placeholder {
-  color: #94a3b8;
-}
-.eyeIcon {
-  cursor: pointer;
-  color: #64748b;
-  display: flex;
-  align-items: center;
-}
-.inputSpan:focus-within {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-}
-.inputSpan:hover {
-  border-color: #cbd5f5;
-}
-.loginBtn {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background: #6366f1;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.loginBtn:hover {
-  background: #4f46e5;
-}
-.loginBtn:active {
-  transform: scale(0.97);
-}
-.dark .loginCard {
-  background: #1e293b;
-  color: #e2e8f0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-.dark .inputSpan {
-  background: #0f172a;
-  border: 1px solid #334155;
-}
-.dark .inputIcon {
-  color: #94a3b8;
-}
-.dark .searchInput {
-  color: #e2e8f0;
-}
-.dark .searchInput::placeholder {
-  color: #64748b;
-}
-.dark .eyeIcon {
-  color: #94a3b8;
-}
-.dark .inputSpan:focus-within {
-  border-color: #818cf8;
-  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.3);
-}
-.dark .loginBtn {
-  background: #818cf8;
-}
-.dark .loginBtn:hover {
-  background: #6366f1;
-}
-.loginCard .logoSpan {
-  margin: 0 auto;
-}
-.loginAddon {
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.loginToggleDark {
+.home {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  width: 250px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 13px;
+}
+.dark .task {
+  border-color: #2ea5ff;
+}
+.actionFlex {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  color: #475569;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.loginToggleDark:hover {
-  background: #e2e8f0;
-  color: #0f172a;
-}
-.loginToggleDark:active {
-  transform: scale(0.95);
-}
-.dark .loginToggleDark {
-  color: #cbd5f5;
-}
-.dark .loginToggleDark:hover {
-  background: #334155;
-  color: #f1f5f9;
-}
-.linkComponent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 5px;
-  width: 100px;
-  height: 38px;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  color: #475569;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.linkComponent:hover {
-  background: #e2e8f0;
-}
-.linkComponent:hover #leftIcon {
-  transform: translateX(-3px);
-}
-.dark .linkComponent {
-  color: #f1f5f9;
-}
-.dark .linkComponent:hover {
-  background: #334155;
 }
