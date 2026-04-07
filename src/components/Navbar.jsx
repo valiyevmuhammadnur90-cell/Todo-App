@@ -1,14 +1,9 @@
-import {
-  ArrowRightOutlined,
-  LoginOutlined,
-  MoonFilled,
-  SearchOutlined,
-  SunFilled,
-} from "@ant-design/icons";
+import { MoonFilled, SunFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import image from "../../public/taskflow_icon.png";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -32,7 +27,7 @@ function Navbar() {
     <div className={dark ? "dark" : ""}>
       <div className="navbar">
         <span className="logoSpan">
-          <img src="/public/taskflow_icon.png" alt="" />
+          <img src={image} alt="" />
           <h2 className="logo" onClick={() => window.location.reload()}>
             Task<strong>flow</strong>
           </h2>
